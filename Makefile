@@ -18,6 +18,9 @@ uninstall:
 clean:
 	rm -f sslscan
 
+cygwin:
+	gcc -g -Wall -L/lib/ sslscan.c -I/usr/include/ -I/usr/inlcude/openssl/ -lssl -lcrypto -o sslscan
+
 newopenssl:
 	gcc -o sslscan -g -Wall -I /tmp/openssl-1.0.0a/ -L/tmp/openssl-1.0.0a/ sslscan.c /tmp/openssl-1.0.0a/libssl.a /tmp/openssl-1.0.0a/libcrypto.a
 
